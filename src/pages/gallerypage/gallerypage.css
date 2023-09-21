@@ -26,7 +26,7 @@
 .gallery-item:hover{
   transition: 1s ease-in;
   cursor: pointer;
-  transform: translateY(2%);
+  transform: translateY(1%);
   box-shadow: 2px 4px 4px rgba(99, 98, 98, 0.23);
   opacity: 0.6;
   border: 2px solid white;
