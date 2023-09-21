@@ -1,0 +1,92 @@
+.header{
+ display: flex;
+ justify-content: center;
+ top: 0;
+ position: fixed;
+ width: 100%;
+ height: 100px;
+ border-radius: 0 0 100px 100px;
+ background-color: #cf7f06;
+ z-index: 999;
+ /* clip-path: polygon(0 0, 75% 0%, 87% 49%, 75% 100%, 0% 100%); */
+ /* clip-path:polygon() ;clip-path: polygon(0 70%, 100% 65%, 100% 100%, 0 80%); */
+}
+
+.quizNavbar{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: aliceblue;
+    align-items: center;
+    width: 80%;
+    height: 60px;
+    border-radius: 20px;
+    margin-top: 1rem;
+    z-index: 999;
+}
+
+.quizNavbar > input {
+    border: 1px solid orange;
+    padding: 10px;
+    border-radius: 20px;
+    color: black;
+}
+.quizNavbar > input:focus{
+    outline: none;
+}
+h1{
+    color: #cf7f06;
+}
+
+.menuIconContainer{
+    color: black;
+}
+
+.menuIcon{
+    color: rgb(247, 7, 7);
+    font-size: 20px;
+    cursor: pointer;
+  animation: rotateBorder 1s linear infinite;
+}
+
+.navLinks{
+    font-size: 15px;
+}
+
+@keyframes rotateBorder {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+@media screen and (max-width: 500px) {
+    .header{
+        height: 70px;
+    }
+
+    .quizNavbar{
+        height: 40px;
+    }
+
+    h1{
+        font-size: 12px;
+    }
+
+    .navLinks{
+        font-size: 12px;
+    }
+
+    .menuIcon{
+        font-size: 14px;
+    }
+
+    .quizNavbar > input {
+        border: 1px solid orange;
+        padding: 3px;
+        width: 120px;
+        border-radius: 15px;
+        color: black;
+    }
+}

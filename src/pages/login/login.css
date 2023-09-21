@@ -1,0 +1,124 @@
+.login {
+    position: fixed;
+    top: 0;
+    left: 50;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 1000;
+    transition: all 0.5s;
+  }
+
+  .loginWrapper{
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25vw;
+    height: 70vh;
+    background-color: #f3f3f3;
+    padding: 1rem 3rem;
+    box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+    z-index: 100000;
+    transition: all 0.5s;
+    border-radius: 9px;
+  }
+  
+  .loginTitle {
+    font-size: 50px;
+    color: rgb(34, 34, 85);
+  }
+  
+  .loginForm {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .loginForm > label {
+    margin: 10px 0;
+  }
+  
+  .loginInput {
+    padding: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 1px;
+    border-bottom: 1px solid gray;
+  }
+  
+  .loginInput:focus {
+    outline: none;
+  }
+  
+  .loginButton {
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: rgb(222, 125, 13);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .loginButton:disabled{
+    cursor: not-allowed;
+    background-color: rgb(43, 131, 75);
+  }
+  
+  .loginRegisterButton {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: rgb(24, 51, 230);
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    color: white;
+    border-radius: 10px;
+  }
+
+  .cancel{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    margin-top: 7px;
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+
+  }
+
+  .notice{
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    z-index: 9999999999;
+    right: 0;
+    top: 1%;
+    margin: 1rem;
+    animation: moveUpAndDown 4s linear infinite;
+    border-radius: 9px;
+
+  }
+
+  @keyframes moveUpAndDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px); 
+    }
+  }
+  
+
+  @media screen and (max-width:700px) {
+    .loginWrapper{
+      width: 80vw;
+      padding: 0.5rem 1.5rem;
+    }
+
+  }
