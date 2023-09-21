@@ -21,7 +21,7 @@ function App() {
     setImages(imageData);
     setTimeout(() => {
       setLoading(false);
-    }, 1000)
+    }, 7000)
     // Initializing SortableJS after images are loaded
     if (imageListRef.current) {
       new Sortable(imageListRef.current, {
@@ -55,7 +55,7 @@ function App() {
 
   //Setting up route
   const router = createBrowserRouter(createRoutesFromElements(
-    <Route element={ <Layout  searchQuery={searchQuery} setSearchQuery={setSearchQuery} filteredImages={filteredImages} /> }>
+    <Route element={ <Layout  searchQuery={searchQuery} setSearchQuery={setSearchQuery} filteredImages={filteredImages} setUser={setUser} /> }>
        <Route index element={<ProtectedRoute><Gallery imageData={imageData} loading={loading} filteredImages={filteredImages} imageListRef={imageListRef} /></ProtectedRoute>} />
        <Route path='/login' element={<Login setUser={setUser} />} />
     </Route>
