@@ -58,7 +58,7 @@ button:hover{
 
 @media screen and (max-width:500px) {
     .promptWrapper{
-        width: 90vw;
+        width: 80vw;
         
     }
 

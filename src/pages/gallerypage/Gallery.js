@@ -5,6 +5,7 @@ export default function Gallery({ imageListRef, filteredImages, loading}) {
   return (
           <>
            {loading ? <Loader /> :
+           <div className="image-gallery">
             ( <div className="gallery" ref={imageListRef}>
               {filteredImages.map((image, index) => (
                 <div className="gallery-item" key={image.id}> 
@@ -14,7 +15,9 @@ export default function Gallery({ imageListRef, filteredImages, loading}) {
                    <span className='drag__me__tag'>{ index + 1}</span>
                 </div>
               ))}
-            </div>)}
+            </div>)
+           </div>
+            }
           </>
   );
 }

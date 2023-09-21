@@ -23,9 +23,9 @@ export default function Login({setUser}) {
         setLoginSuccess(true)
         setErr(false)
         setTimeout(() => {
-         setUser(true)
-         navigate("/")
-        }, 3000)
+          setUser(true)
+          navigate("/")
+        }, 4000)
       } catch(err) {
         setErr(true)
       }

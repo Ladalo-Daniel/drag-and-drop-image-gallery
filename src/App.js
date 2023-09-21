@@ -19,9 +19,7 @@ function App() {
   //Fetching Image Data
   useEffect(() => {
     setImages(imageData);
-    setTimeout(() => {
       setLoading(false);
-    }, 7000)
     // Initializing SortableJS after images are loaded
     if (imageListRef.current) {
       new Sortable(imageListRef.current, {

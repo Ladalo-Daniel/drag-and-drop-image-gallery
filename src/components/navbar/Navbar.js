@@ -2,8 +2,7 @@ import "./navbar.css"
 import React, { useState } from 'react'
 import { auth } from '../../firebase'
 import { signOut } from 'firebase/auth'
-import { Navigate, useNavigate } from 'react-router-dom'
-import { NavLink } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Prompt from "../prompt/Prompt"
 
 export default function Navbar({searchQuery, setSearchQuery, setUser}) {
