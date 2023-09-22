@@ -1,13 +1,13 @@
 import "./navbar.css"
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { auth } from '../../firebase'
 import { signOut } from 'firebase/auth'
-import { useNavigate } from 'react-router-dom'
 import Prompt from "../prompt/Prompt"
+import { AppContext } from "../../context/AppContext"
 
-export default function Navbar({searchQuery, setSearchQuery, setUser}) {
+export default function Navbar() {
+  const {searchQuery, setSearchQuery, setUser} = useContext(AppContext)
   const [prompt, setPrompt] = useState(false)
-  const navigate = useNavigate()
 
     const handleLogout = () => signOut(auth).then(() => {
       setPrompt(true)
@@ -16,7 +16,6 @@ export default function Navbar({searchQuery, setSearchQuery, setUser}) {
 
     const handlePromptConfirm = () => {
       setUser(false)
-      navigate("/login")
       setPrompt(false); // Hide the prompt after confirming
     };
     
@@ -27,7 +26,7 @@ export default function Navbar({searchQuery, setSearchQuery, setUser}) {
   return (
     <header className='header'>
     <nav className='quizNavbar'>
-      <h1>ImgGary</h1>
+      <h1>D-N-D</h1>
       <input
         type="text"
         placeholder="Search by tag..."

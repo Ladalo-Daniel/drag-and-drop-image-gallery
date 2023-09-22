@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import Loader from "../../components/loader/Loader";
 import "./gallerypage.css"
+import { AppContext } from "../../context/AppContext";
 
-export default function Gallery({ imageListRef, filteredImages, loading}) {
+export default function Gallery() {
+  const {imageListRef, filteredImages, loading} = useContext(AppContext)
   return (
           <>
            {loading ? <Loader /> :

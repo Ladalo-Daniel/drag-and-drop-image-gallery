@@ -1,16 +1,17 @@
 
-import React from "react";
+import React, { useContext } from "react";
 import "./login.css"
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from "../../firebase";
 import { useState } from "react"
-import { useNavigate } from "react-router-dom";
+import { AppContext } from "../../context/AppContext";
+import Loader from "../../components/loader/Loader";
 
-export default function Login({setUser}) {
+export default function Login() {
+    const {setUser, loading, setLoading} = useContext(AppContext)
     const [loginSuccess, setLoginSuccess] = useState(false)
     const [err, setErr] = useState()
     const [cancel, setCancel] = useState(true)
-    const navigate = useNavigate()
      
     //A function that handles login using firebase
     const handleSubmit = async (e) => {
@@ -19,13 +20,14 @@ export default function Login({setUser}) {
       const password = e.target[1].value
   
       try{
+        setLoading(true)
         await signInWithEmailAndPassword(auth, email, password)
         setLoginSuccess(true)
         setErr(false)
         setTimeout(() => {
+          setLoading(false)
           setUser(true)
-          navigate("/")
-        }, 4000)
+        }, 2000)
       } catch(err) {
         setErr(true)
       }
@@ -39,7 +41,8 @@ export default function Login({setUser}) {
   
   return (
    <>
-     <div className="login">
+     {loading ? <Loader /> : 
+     (<div className="login">
         {cancel &&
          <div className="notice">
             <span className="cancel" onClick={handlCancel}>X</span>
@@ -70,7 +73,7 @@ export default function Login({setUser}) {
       </form>
      {!loginSuccess && <p style={{color:"orangered", marginTop:"10px"}}>Please Login to continue...</p>}
        </div>
-    </div>
+    </div>)}
    </> 
   )
 }

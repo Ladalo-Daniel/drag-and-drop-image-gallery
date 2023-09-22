@@ -1,9 +1,10 @@
 import './loader.css'
+import spinner from "../../../src/img/spinner.gif"
 
 export default function Loader() {
   return (
     <div className='loader'>
-     <i className="fa fa-spinner fa-spin"></i>
+      <img className='spinner' src={spinner} alt="" />
     </div>
   )
 }

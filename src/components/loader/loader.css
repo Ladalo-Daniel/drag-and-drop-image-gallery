@@ -15,7 +15,7 @@
     transition: all 0.5s;
 }
 
-.fa-spinner{
+.spinner{
     font-size: 50px;
     padding: 30px;
     background-color: rgb(240, 105, 15);
