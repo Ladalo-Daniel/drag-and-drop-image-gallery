@@ -12,6 +12,7 @@ export default function Login() {
     const [loginSuccess, setLoginSuccess] = useState(false)
     const [err, setErr] = useState()
     const [cancel, setCancel] = useState(true)
+
      
     //A function that handles login using firebase
     const handleSubmit = async (e) => {

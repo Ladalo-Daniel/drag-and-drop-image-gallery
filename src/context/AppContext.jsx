@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useRef, useState } from 'react'
 import imageData from '../imageData';
 import Sortable from 'sortablejs';
+//import { Navigate } from 'react-router-dom';
 
 export const AppContext = createContext()
 
